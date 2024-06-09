@@ -128,9 +128,6 @@ function getResEmbedsRandomItem(list) {
   // 初期化
   let resData = defaultResEmbeds;
 
-  // サムネイルにバナーを設定
-  // defaultResEmbeds[0].thumbnail.url = BANNER_URL.heros;
-
   // ガチャを実行
   const { name, image } = list[Math.floor(Math.random() * list.length)];
 
