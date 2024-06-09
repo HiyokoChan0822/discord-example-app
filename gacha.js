@@ -16,12 +16,6 @@ const defaultResEmbeds = [
     author: {
       name: '',
     },
-    image: {
-      url: '',
-    },
-    thumbnail: {
-      url: '',
-    },
     fields: [
       {
         name: 'ガチャ結果',
