@@ -13,9 +13,6 @@ const defaultResEmbeds = [
   {
     color: 0xff8808,
     title: 'ガチャ',
-    author: {
-      name: '',
-    },
     fields: [
       {
         name: 'ガチャ結果',
