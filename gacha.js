@@ -65,6 +65,7 @@ const BANNER_URL = {
  */
 export function getResGacha() {
   let list;
+  
   switch (getReqSubCommand()) {
     case 'heros':
       list = heros;
@@ -75,6 +76,7 @@ export function getResGacha() {
     default:
       break;
   };
+  
   return {
     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
     data: {
