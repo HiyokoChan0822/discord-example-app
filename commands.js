@@ -7,7 +7,6 @@ import { InstallGlobalCommands } from './utils.js';
 const TEST_COMMAND = {
   name: 'test',
   description: 'Basic command',
-  default_member_permission: false,
   type: 1,
 };
 
@@ -17,12 +16,10 @@ const TEST_COMMAND = {
 const BIO_COMMAND = {
   name: 'bio',
   description: 'Bio command',
-  default_member_permission: false,
   options: [
     {
       name: 'button',
       description: 'Set bio buttons',
-      default_member_permission: false,
       type: 1,
     },
   ],
@@ -30,19 +27,43 @@ const BIO_COMMAND = {
 };
 
 /**
- * @type {Object} Recruiting command
+ * @type {Object} Recruit command
  */
 const RECRUITING_COMMAND = {
-  name: 'recruiting',
-  description: 'Recruiting member',
-  default_member_permission: true,
-  options: [
-    {
-      name: 'custom',
-      description: 'Recruiting member for custom battle',
-      type: 1,
-    },
-  ],
+  name: 'recruit',
+  description: 'Recruit member',
+  // options: [
+  //   {
+  //     name: 'battle',
+  //     description: '世界中のプレイヤーが あなたを待っています',
+  //     type: 3,
+  //     choices: [
+  //       {
+  //         name: 'バトルアリーナ',
+  //         value: 'バトルアリーナ',
+  //       },
+  //       {
+  //         name: 'フリーバトル',
+  //         value: 'フリーバトル',
+  //       },
+  //       {
+  //         name: 'カスタムバトル',
+  //         value: 'カスタムバトル',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     name: 'rank',
+  //     description: '',
+  //     type: 3,
+  //     choices: [
+  //       {
+  //         name: 'S1',
+  //         value: 'S1',
+  //       },
+  //     ],
+  //   },
+  // ],
   type: 1,
 };
 
@@ -51,70 +72,93 @@ const RECRUITING_COMMAND = {
  */
 const GACHA_COMMAND = {
   name: 'gacha',
-  description: 'Get hero or card gacha results',
-  default_member_permission: true,
+  description: 'Draw hero or card gacha results',
   options: [
     {
-      name: 'heros',
-      description: 'Get hero gacha results',
+      name: 'hero',
+      description: 'Draw hero gacha results',
+      type: 1,
       options: [
         {
+          name: 'original',
+          description: 'include original hero (default: true)',
+          type: 5,
+          required: false,
+        },
+        {
+          name: 'collaboration',
+          description: 'include collaboration hero (default: true)',
+          type: 5,
+          required: false,
+        },
+        {
           name: 'attacker',
-          description: 'Include attacker hero? (default: true)',
+          description: 'include attacker hero (default: true)',
           type: 5,
           required: false,
         },
         {
           name: 'gunner',
-          description: 'Include gunner hero? (default: true)',
+          description: 'include gunner hero (default: true)',
           type: 5,
           required: false,
         },
         {
           name: 'tank',
-          description: 'Include tank hero? (default: true)',
+          description: 'include tank hero (default: true)',
           type: 5,
           required: false,
         },
         {
           name: 'sprinter',
-          description: 'Include sprinter hero? (default: true)',
+          description: 'include sprinter hero (default: true)',
           type: 5,
           required: false,
         },
       ],
-      type: 1,
     },
     {
-      name: 'cards',
-      description: 'Get card gacha results',
+      name: 'card',
+      description: 'Draw card gacha results',
+      type: 1,
       options: [
         {
-          name: 'ur',
-          description: 'include UR card? (default: true)',
+          name: 'original',
+          description: 'include original card (default: true)',
           type: 5,
           required: false,
         },
         {
-          name: 'sr',
-          description: 'include SR card? (default: false)',
+          name: 'collaboration',
+          description: 'include collaboration card (default: true)',
           type: 5,
           required: false,
         },
         {
-          name: 'r',
-          description: 'include R card? (default: false)',
+          name: 'UR',
+          description: 'include UR card (default: true)',
           type: 5,
           required: false,
         },
         {
-          name: 'n',
-          description: 'include N card? (default: false)',
+          name: 'SR',
+          description: 'include SR card (default: false)',
+          type: 5,
+          required: false,
+        },
+        {
+          name: 'R',
+          description: 'include R card (default: false)',
+          type: 5,
+          required: false,
+        },
+        {
+          name: 'N',
+          description: 'include N card (default: false)',
           type: 5,
           required: false,
         },
       ],
-      type: 1,
     },
   ],
 };
@@ -125,7 +169,6 @@ const GACHA_COMMAND = {
 const QUIZ_COMMAND = {
   name: 'quiz',
   description: 'Quiz command',
-  default_member_permission: false,
   type: 1,
 };
 
@@ -135,7 +178,14 @@ const QUIZ_COMMAND = {
 const SCORE_COMMAND = {
   name: 'score',
   description: 'Score command',
-  default_member_permission: false,
+  options: [
+    {
+      name: "uid",
+      description: "The type of uid",
+      type: 4,
+      required: true,
+    },
+  ],
   type: 1,
 };
 
@@ -145,7 +195,6 @@ const SCORE_COMMAND = {
 const GENERATOR_COMMAND = {
   name: 'generator',
   description: 'Generator command',
-  default_member_permission: false,
   type: 1,
 };
 
@@ -155,7 +204,6 @@ const GENERATOR_COMMAND = {
 const POINT_COMMAND = {
   name: 'point',
   description: 'Point command',
-  default_member_permission: false,
   type: 1,
 };
 
@@ -165,7 +213,6 @@ const POINT_COMMAND = {
 const CONTACT_COMMAND = {
   name: 'contact',
   description: 'Contact command',
-  default_member_permission: false,
   type: 1,
 };
 
@@ -175,7 +222,6 @@ const CONTACT_COMMAND = {
 const HELP_COMMAND = {
   name: 'help',
   description: 'Help command',
-  default_member_permission: false,
   type: 1,
 };
 
